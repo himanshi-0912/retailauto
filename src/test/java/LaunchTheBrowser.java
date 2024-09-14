@@ -36,7 +36,7 @@ public class LaunchTheBrowser {
       //  driver.findElement(By.cssSelector("//textarea[id='APjFqb']")).sendKeys("HImanshi");
 
         driver.findElement(By.xpath("//textarea[@name='q']")).sendKeys("This is the last locaotr");
-
+driver.close();
 
     }
 
