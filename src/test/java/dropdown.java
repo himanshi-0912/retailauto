@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -28,6 +29,26 @@ public class dropdown {
 
         Select select = new Select(dropdown);
         select.selectByVisibleText("Green");
+        select.selectByVisibleText("Red");
+        //select.selectByIndex();
+
+    }
+    @Test
+    public void testcase2() throws InterruptedException {
+
+        Thread.sleep(5000);
+        WebElement dropdown = driver.findElement(By.xpath("//select[@name='cars']"));
+        Select obj = new Select(dropdown);
+        obj.selectByVisibleText("Audi");
+
+    }
+    @Test
+    public void test4() throws InterruptedException {
+        Thread.sleep(5000);
+        WebElement dropdown = driver.findElement(By.xpath("//div[@class=' css-1wy0on6']/div[@class=' css-tlfecz-indicatorContainer'][1] "));
+        dropdown.click();
+        Select obj1 = new Select(dropdown);
+        obj1.selectByIndex(2);
 
     }
 }
