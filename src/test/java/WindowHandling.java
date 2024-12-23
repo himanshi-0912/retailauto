@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 import java.util.Set;
 
 public class WindowHandling {
-    @Test
+    @Test(priority = 2)
     public void test() throws InterruptedException {
         /*
         * 1. Setup browser and launch the browser
@@ -53,11 +53,12 @@ public class WindowHandling {
             }
 
         }
+        driver.quit();
 
 
 
     }
-    @Test
+    @Test(priority = 1)
     public void test2(){
         //1. Setup browser and launch the browser
         WebDriverManager.chromedriver().setup();
@@ -83,7 +84,7 @@ public class WindowHandling {
         driver.quit();
 
     }
-    @Test
+    @Test(priority =3)
     public void test3(){
         WebDriverManager.edgedriver().setup();
         WebDriver driver = new EdgeDriver();
